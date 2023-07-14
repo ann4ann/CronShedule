@@ -1,0 +1,25 @@
+.scheduleForm {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.formBlock {
+    width: 750px;
+    display: flex;
+    align-items: center;
+}
+
+.formBlock > div:first-child {
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.formBlock > div:not(:first-child) {
+    flex-grow: 1;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+ }
