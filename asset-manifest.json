@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CronShedule/static/css/main.48ee91c6.css",
+    "main.js": "/CronShedule/static/js/main.6fd07d3c.js",
+    "static/js/787.cddf7f2f.chunk.js": "/CronShedule/static/js/787.cddf7f2f.chunk.js",
+    "index.html": "/CronShedule/index.html",
+    "main.48ee91c6.css.map": "/CronShedule/static/css/main.48ee91c6.css.map",
+    "main.6fd07d3c.js.map": "/CronShedule/static/js/main.6fd07d3c.js.map",
+    "787.cddf7f2f.chunk.js.map": "/CronShedule/static/js/787.cddf7f2f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48ee91c6.css",
+    "static/js/main.6fd07d3c.js"
+  ]
+}
