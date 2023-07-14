@@ -20,14 +20,15 @@ export const WeekForm = (props: WeekFormProps) => {
     return (
         <>
             {Object.keys(daysOfWeek).map((day) => (
-                <Input
-                    id={day}
-                    key={day + "week"}
-                    label={day}
-                    type="checkbox"
-                    checked={daysOfWeek[day]}
-                    onChange={onDaysOfWeekChange}
-                />
+                <div key={day}>
+                    <Input
+                        id={day}
+                        label={day}
+                        type="checkbox"
+                        checked={daysOfWeek[day]}
+                        onChange={onDaysOfWeekChange}
+                    />
+                </div>
             ))}
             <div>
                 <Input

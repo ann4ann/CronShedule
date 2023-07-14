@@ -6,11 +6,32 @@ import {Input} from "./app/components/common/Input/Input";
 
 export type weekObjType = Record<string, boolean>
 
+const noOneDay = {
+  "SUN": false,
+  "MON": false,
+  "TUE": false,
+  "WED": false,
+  "THU": false,
+  "FRI": false,
+  "SAT": false
+}
+
 function App() {
   const [chooseRepeat, setChooseRepeat] = useState<string>("dayOfMonth")
   const onRepeatTypeChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value
     setChooseRepeat(value)
+    if (value !== "every") {
+      setInterval(0)
+    }
+    if (value !== "daysOfWeek") {
+      setDaysOfWeek(noOneDay)
+      setEveryDay(false)
+    }
+    if (value !== "daysOfMonth") {
+      setDayOfMonth(0)
+      setLastDayOfMonth(false)
+    }
   }
 
   const [cronObj, setCronObj] = useState<cronObjType>({
@@ -29,7 +50,6 @@ function App() {
   }
   const onLastDayOfMonth = () => {
     setLastDayOfMonth(!lastDayOfMonth)
-    setInterval(0)
   }
   useEffect(() => {
     const day = lastDayOfMonth
@@ -44,15 +64,6 @@ function App() {
   }, [dayOfMonth, lastDayOfMonth])
 
   // WEEKLY
-  const noOneDay = {
-    "SUN": false,
-    "MON": false,
-    "TUE": false,
-    "WED": false,
-    "THU": false,
-    "FRI": false,
-    "SAT": false
-  }
   const [daysOfWeek, setDaysOfWeek] = useState<weekObjType>(noOneDay)
   const [everyDay, setEveryDay] = useState<boolean>(false)
   const onDaysOfWeekChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +73,6 @@ function App() {
         ...prevState,
         [day]: !prevState[day]
       }))
-      setInterval(0)
     }
   }
   const onEveryDayChange = () => {

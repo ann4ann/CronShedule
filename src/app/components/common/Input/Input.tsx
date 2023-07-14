@@ -3,7 +3,6 @@ import cls from "./input.module.css"
 
 interface InputProps {
     id: string;
-    key?: string;
     label?: string;
     type?: string;
     checked?: boolean;
@@ -18,7 +17,6 @@ export const Input = (props: InputProps) => {
     const {
         id,
         label = "",
-        key,
         checked = false,
         type = "text",
         value = "",
@@ -29,7 +27,7 @@ export const Input = (props: InputProps) => {
     } = props;
 
     return (
-        <div key={key} className={cls.inputBlock}>
+        <div className={cls.inputBlock}>
             <label htmlFor={id}>{label}</label>
             <input
                 id={id}
